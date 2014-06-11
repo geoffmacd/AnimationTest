@@ -44,8 +44,6 @@ class FirstViewController: UIViewController {
     
         
         rectangle.layer.addAnimation(ani, forKey: "Following")
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

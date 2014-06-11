@@ -11,10 +11,12 @@ import UIKit
 import QuartzCore
 @IBDesignable class RoundedRect:UIView {
 
+    var saveAnimations:Dictionary<String,CAAnimation>
 
     @IBInspectable var corner:Int = 40
     
     init(coder aDecoder: NSCoder!) {
+        saveAnimations = Dictionary()
         super.init(coder: aDecoder)
     }
 
@@ -29,5 +31,37 @@ import QuartzCore
         path.fill()
 
     }
+    
+    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+    
+        for key : AnyObject in layer.animationKeys(){
+            
+            let ani = layer.animationForKey(key as String)
+            saveAnimations[key as String] = ani
+        }
+        
+        layer.removeAllAnimations()
+        //drag
+    }
+    
+    override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
+        
+        let touch : UITouch = touches.anyObject() as UITouch
+        self.frame.origin = touch.locationInView(self.superview)
+
+    }
+    
+    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!)  {
+        //resume
+        
+        for (key,ani) in saveAnimations{
+            
+            layer.addAnimation(ani, forKey: key)
+        }
+        
+        saveAnimations.removeAll(keepCapacity: true)
+    }
+    
+    
     
 }
