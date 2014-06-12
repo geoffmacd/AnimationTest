@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
-        <!--First View Controller - First-->
+        <!--First View Controller - Basic-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="AnimationTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,11 +21,11 @@
                                 <items/>
                             </toolbar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P4a-p9-NeH" customClass="RoundedRect" customModule="AnimationTest" customModuleProvider="target">
-                                <rect key="frame" x="152" y="228" width="125" height="120"/>
+                                <rect key="frame" x="178" y="246" width="125" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ddn-hW-hDV" customClass="RoundedRect" customModule="AnimationTest" customModuleProvider="target">
-                                <rect key="frame" x="167" y="73" width="125" height="120"/>
+                                <rect key="frame" x="178" y="67" width="125" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -37,7 +37,7 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Basic" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="rectangle" destination="Ddn-hW-hDV" id="xx2-fu-sOc"/>
                         <outlet property="square" destination="P4a-p9-NeH" id="GYe-24-o2H"/>
@@ -47,7 +47,7 @@
             </objects>
             <point key="canvasLocation" x="3042" y="672"/>
         </scene>
-        <!--Second View Controller - Second-->
+        <!--Second View Controller - KeyFrame-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="SecondViewController" customModule="AnimationTest" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,7 +66,11 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNR-Qk-T2l" customClass="RoundedRect" customModule="AnimationTest" customModuleProvider="target">
-                                <rect key="frame" x="188" y="181" width="125" height="120"/>
+                                <rect key="frame" x="177" y="180" width="125" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6rz-kY-k0w" customClass="RoundedRect" customModule="AnimationTest" customModuleProvider="target">
+                                <rect key="frame" x="149" y="215" width="183" height="49"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -78,9 +82,10 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="KeyFrame" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="square" destination="SNR-Qk-T2l" id="ZbR-W8-Duo"/>
+                        <outlet property="widget" destination="6rz-kY-k0w" id="irp-K2-Ur6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -100,11 +105,91 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="EMS-lY-3aB" kind="relationship" relationship="viewControllers" id="CSR-FU-Pic"/>
+                        <segue destination="HIc-1H-FSn" kind="relationship" relationship="viewControllers" id="GOt-UU-92s"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2283" y="965"/>
+        </scene>
+        <!--Dynamic View Controller - UIDynamics-->
+        <scene sceneID="GdZ-Eb-edR">
+            <objects>
+                <viewController id="EMS-lY-3aB" customClass="DynamicViewController" customModule="AnimationTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u3f-DA-XIa"/>
+                        <viewControllerLayoutGuide type="bottom" id="dqs-hH-VOH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6lk-HH-7mJ">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-Kw-psv">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="44"/>
+                                <items>
+                                    <navigationItem id="sot-OL-DMl"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lw5-47-5o6" customClass="RoundedRect" customModule="AnimationTest" customModuleProvider="target">
+                                <rect key="frame" x="298" y="182" width="50" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Mo-JE-WfV" customClass="RoundedRect" customModule="AnimationTest" customModuleProvider="target">
+                                <rect key="frame" x="8" y="89" width="75" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wd9-Kw-psv" firstAttribute="leading" secondItem="6lk-HH-7mJ" secondAttribute="leading" id="BoT-A7-fxe"/>
+                            <constraint firstItem="Wd9-Kw-psv" firstAttribute="trailing" secondItem="6lk-HH-7mJ" secondAttribute="trailing" id="a69-0T-x2P"/>
+                            <constraint firstItem="Wd9-Kw-psv" firstAttribute="top" secondItem="6lk-HH-7mJ" secondAttribute="top" id="hYd-aV-UUE"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="UIDynamics" image="first" id="GcC-oI-3jY"/>
+                    <connections>
+                        <outlet property="square" destination="2Mo-JE-WfV" id="kpX-Vt-gCj"/>
+                        <outlet property="widget" destination="Lw5-47-5o6" id="OZR-ts-LGe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5JS-nL-n4u" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2481" y="1625"/>
+        </scene>
+        <!--Motion View Controller - UIMotionEffects-->
+        <scene sceneID="aOk-yt-RgS">
+            <objects>
+                <viewController id="HIc-1H-FSn" customClass="MotionViewController" customModule="AnimationTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K2X-ag-GuO"/>
+                        <viewControllerLayoutGuide type="bottom" id="f5c-2E-2rM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bys-bL-z6x">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JoC-JC-uui">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="44"/>
+                                <items>
+                                    <navigationItem id="LeK-L7-XPf"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JoC-JC-uui" firstAttribute="top" secondItem="Bys-bL-z6x" secondAttribute="top" id="9zG-2F-yAg"/>
+                            <constraint firstItem="JoC-JC-uui" firstAttribute="trailing" secondItem="Bys-bL-z6x" secondAttribute="trailing" id="HBe-vT-QSk"/>
+                            <constraint firstItem="JoC-JC-uui" firstAttribute="leading" secondItem="Bys-bL-z6x" secondAttribute="leading" id="N2C-U2-oYW"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="UIMotionEffects" image="second" id="mTv-B1-A93"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ouk-Na-xiz" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="1620"/>
         </scene>
     </scenes>
     <resources>

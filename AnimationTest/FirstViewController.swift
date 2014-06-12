@@ -19,7 +19,6 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.title = "Basic Animations"
         
         self.rectangle.corner = 10
     }
@@ -31,6 +30,7 @@ class FirstViewController: UIViewController {
         ani.toValue = UIScreen.mainScreen().bounds.size.width + square.bounds.size.width/2
         ani.duration = 2
         ani.repeatCount = HUGE
+        ani.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
         
         square.layer.addAnimation(ani, forKey: "Traveling")
         
@@ -41,9 +41,12 @@ class FirstViewController: UIViewController {
         ani2.duration = 2
         ani2.repeatCount = HUGE
         ani2.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        ani2.beginTime = CACurrentMediaTime() + 1
     
         
-        rectangle.layer.addAnimation(ani, forKey: "Following")
+        rectangle.layer.addAnimation(ani2, forKey: "Following")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

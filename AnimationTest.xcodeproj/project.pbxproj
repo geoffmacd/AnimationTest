@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C3138C231948BD2F00C71EEE /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3138C221948BD2F00C71EEE /* Objects.swift */; };
+		C32AEC3A194A2BFE00E6D581 /* DynamicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32AEC39194A2BFE00E6D581 /* DynamicViewController.swift */; };
 		C331F9131948B53D003C592E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331F9121948B53D003C592E /* AppDelegate.swift */; };
 		C331F9151948B53D003C592E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331F9141948B53D003C592E /* FirstViewController.swift */; };
 		C331F9171948B53D003C592E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331F9161948B53D003C592E /* SecondViewController.swift */; };
 		C331F91A1948B53D003C592E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C331F9181948B53D003C592E /* Main.storyboard */; };
 		C331F91C1948B53D003C592E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C331F91B1948B53D003C592E /* Images.xcassets */; };
 		C331F9281948B53D003C592E /* AnimationTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331F9271948B53D003C592E /* AnimationTestTests.swift */; };
+		C37978D2194A3E7B003E9252 /* MotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37978D1194A3E7B003E9252 /* MotionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		C3138C221948BD2F00C71EEE /* Objects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
+		C32AEC39194A2BFE00E6D581 /* DynamicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicViewController.swift; sourceTree = "<group>"; };
 		C331F90D1948B53D003C592E /* AnimationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C331F9111948B53D003C592E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C331F9121948B53D003C592E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +41,7 @@
 		C331F9211948B53D003C592E /* AnimationTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C331F9261948B53D003C592E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C331F9271948B53D003C592E /* AnimationTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestTests.swift; sourceTree = "<group>"; };
+		C37978D1194A3E7B003E9252 /* MotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				C331F9141948B53D003C592E /* FirstViewController.swift */,
 				C331F9161948B53D003C592E /* SecondViewController.swift */,
 				C331F9181948B53D003C592E /* Main.storyboard */,
+				C37978D1194A3E7B003E9252 /* MotionViewController.swift */,
+				C32AEC39194A2BFE00E6D581 /* DynamicViewController.swift */,
 				C3138C221948BD2F00C71EEE /* Objects.swift */,
 				C331F91B1948B53D003C592E /* Images.xcassets */,
 				C331F9101948B53D003C592E /* Supporting Files */,
@@ -214,7 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C32AEC3A194A2BFE00E6D581 /* DynamicViewController.swift in Sources */,
 				C331F9171948B53D003C592E /* SecondViewController.swift in Sources */,
+				C37978D2194A3E7B003E9252 /* MotionViewController.swift in Sources */,
 				C3138C231948BD2F00C71EEE /* Objects.swift in Sources */,
 				C331F9131948B53D003C592E /* AppDelegate.swift in Sources */,
 				C331F9151948B53D003C592E /* FirstViewController.swift in Sources */,

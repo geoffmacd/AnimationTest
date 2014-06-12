@@ -34,14 +34,17 @@ import QuartzCore
     
     override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
     
-        for key : AnyObject in layer.animationKeys(){
+        if let animations = layer.animationKeys(){
             
-            let ani = layer.animationForKey(key as String)
-            saveAnimations[key as String] = ani
+            for key : AnyObject in layer.animationKeys(){
+                
+                let ani = layer.animationForKey(key as String)
+                saveAnimations[key as String] = ani
+            }
+            
+            layer.removeAllAnimations()
+            //drag
         }
-        
-        layer.removeAllAnimations()
-        //drag
     }
     
     override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {

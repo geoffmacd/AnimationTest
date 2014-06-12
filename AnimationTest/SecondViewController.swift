@@ -12,15 +12,15 @@ import QuartzCore
 class SecondViewController: UIViewController {
     
     
+    @IBOutlet var widget : RoundedRect
     @IBOutlet var square : RoundedRect
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.title = "KeyFrame Animations"
-        
         square.corner = 5
+        widget.corner = 4
     }
     
     
@@ -42,11 +42,17 @@ class SecondViewController: UIViewController {
         pathAni.path = path.CGPath
         pathAni.duration = 4
         pathAni.repeatCount = HUGE
-        pathAni.calculationMode = kCAAnimationPaced;
+        pathAni.calculationMode = kCAAnimationCubicPaced;
         
         
         square.layer.addAnimation(pathAni, forKey: "path")
         
+        var shake = CAKeyframeAnimation(keyPath: "position.x")
+        shake.values = [0,5,-5,0]
+        shake.duration = 1
+        shake.repeatCount = HUGE
+        
+        widget.layer.addAnimation(shake, forKey: "shake")
     }
     
     override func didReceiveMemoryWarning() {
